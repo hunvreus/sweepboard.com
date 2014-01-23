@@ -1,0 +1,57 @@
+#content {
+  .content {
+    @include clearfix();
+    padding: 2*$gutter 0;
+  }
+  #hero {
+    background: tint($base, 90%);
+    border-top: 1px solid tint($base, 85%);
+    .content {
+      text-align: center;
+    }
+    h1 {
+      margin-bottom: $gutter/2;
+    }
+    h2 {
+      color: tint($base, 60%);
+      font-size: $large;
+      margin-bottom: 2*$gutter;
+    }
+    .button {
+      font-size: $large;
+      padding: 1.5*$gutter/2 $gutter;
+    }
+    .screenshot {
+      display: block;
+      height: 360px;
+      margin: 2*$gutter auto -2*$gutter;
+      overflow: hidden;
+    }
+  }
+  #features,
+  #pitch {
+    h2 {
+      margin-bottom: 2*$gutter;
+      text-align: center;
+    }
+  }
+  #features {
+    ul {
+      list-style: none;
+      margin: 0;
+      margin-right: -$gutter;
+      padding: 0;
+      li {
+        background: #FFF;
+        @include border-radius($radius + 1);
+        float: left;
+        margin-right: $gutter;
+        width: ($content - 2*$gutter)/3;
+        h3 {
+          font-size: $size;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}

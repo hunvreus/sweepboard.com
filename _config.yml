@@ -1,0 +1,14 @@
+---
+exclude: ['README.markdown']
+pygments: true
+safe: false
+
+name: Down
+description: 'Down, a lightweight Jekyll boilerplate'
+
+author: Wiredcraft
+email: info@wiredcraft.com
+url: http://wiredcraft.com/down
+
+# ga: XXX
+# gauges: XXX

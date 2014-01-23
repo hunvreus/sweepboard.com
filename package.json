@@ -1,0 +1,13 @@
+{
+    "name": "Wiredcraft",
+    "version": "0.0.1",
+    "main": "Gruntfile.js",
+    "dependencies" : {},
+    "devDependencies" : {
+        "bower": "*",
+        "grunt-notify" : "*",
+        "grunt-contrib-watch" : "*",
+        "grunt-contrib-compass" : "*",
+        "grunt-contrib-concat" : "*"
+    }
+}
