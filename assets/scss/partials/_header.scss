@@ -16,7 +16,7 @@
     float: left;
     font-family: $brand;
     font-size: $huge;
-    font-weight: normal;
+    font-weight: 600;
     margin-top: $gutter/4;
     &:before {
       @include icon();
