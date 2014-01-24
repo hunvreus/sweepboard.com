@@ -126,14 +126,12 @@
             margin-top: $gutter/4;
           }
           blockquote {
-            font-size: $large;
             font-style: italic;
             margin: 0 0 $gutter/4 2*$gutter;
           }
           small {
-            color: tint($base, 60%);
             display: block;
-            font-size: $small;
+            font-size: $micro;
             margin: 0 0 0 2*$gutter;
           }
         }
