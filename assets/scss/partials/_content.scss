@@ -28,8 +28,7 @@
       overflow: hidden;
     }
   }
-  #features,
-  #pitch {
+  .section {
     h2 {
       margin-bottom: 2*$gutter;
       text-align: center;
@@ -37,19 +36,72 @@
   }
   #features {
     ul {
+      @include clearfix();
       list-style: none;
       margin: 0;
       margin-right: -$gutter;
-      padding: 0;
+      padding: $gutter 0 0;
       li {
-        background: #FFF;
-        @include border-radius($radius + 1);
         float: left;
         margin-right: $gutter;
         width: ($content - 2*$gutter)/3;
+        img {
+          float: left;
+          margin: 0 $gutter 0 0;
+        }
         h3 {
           font-size: $size;
           font-weight: bold;
+        }
+        h3,
+        p {
+          margin-left: 90 + $gutter;
+        }
+        &.soon {
+          h3:after {
+            background: $green;
+            @include border-radius($radius);
+            content: 'Soon';
+            color: #FFF;
+            font-size: $pico;
+            line-height: 1;
+            margin-left: $gutter/4;
+            padding: $gutter/5 $gutter/4;
+            text-transform: uppercase;
+          }
+          img {
+            opacity: 0.6;
+          }
+        }
+      }
+    }
+  }
+  #signup {
+    font-size: $large;
+    .content {
+      background: tint($blue, 90%);
+      @include border-radius($radius);
+      padding: $gutter;
+      text-align: center;
+    }
+    .button {
+      margin-left: $gutter/2;
+      padding: $gutter/2 1.5*$gutter/2;
+    }
+  }
+  #more {
+    .why {
+      width: 50%;
+      ul {
+        list-style: none;
+        margin: 0;
+        li {
+          margin: 0 0 $gutter/2;
+          &:before {
+            @include icon();
+            content: 'c';
+            margin-right: $gutter/4;
+          }
         }
       }
     }

@@ -31,22 +31,29 @@
     p {
       margin-left: 3*$gutter;
     }
+    a {
+      color: inherit;
+    }
     img {
+      @include filter(grayscale(100%));
       float: left;
       margin: $gutter/4 0 0;
       opacity: 0.4;
       width: 2*$gutter;
     }
-    &:hover {
-      img {
-        opacity: 1;
-      }
+  }
+  &:hover .credit {
+    a {
+      color: shade($blue, 10%);
+    }
+    img {
+      @include filter(none);
+      opacity: 1;
     }
   }
   .copyright {
     clear: both;
     color: tint($base, 70%);
-    font-size: $micro;
     margin: 0;
     padding-top: $gutter;
   }
