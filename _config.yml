@@ -3,8 +3,8 @@ exclude: ['README.markdown']
 pygments: true
 safe: false
 
-name: Down
-description: 'Down, a lightweight Jekyll boilerplate'
+name: Octokan
+description: 'A Better Issue Queue for GitHub'
 
 author: Wiredcraft
 email: info@wiredcraft.com
