@@ -1,233 +1,186 @@
-/* Compass */
+/* Eggshell */
 
-@import 'compass/css3';
-@import 'compass/css3/border-radius';
-@import 'compass/css3/filter';
-@import 'compass/css3/transition';
-@import 'compass/css3/transform';
-@import 'compass/utilities/general/clearfix';
-@import 'compass/css3/user-interface';
+@import 'eggshell';
 
-/* Variables (colors, layout, spacing & typography) */
+/* Variables */
 
-@import '_variables.scss';
-@import '_fonts.scss';
+$avatar: 22px;
+$sidebar: 33%;
+$blog: 700px;
+$width: 900px;
 
-/* Common styling (eggshell) */
-
-@import 'common/_form.scss';
-@import 'common/_button.scss';
-@import 'common/_popover.scss';
-@import 'common/_dropdown.scss';
-@import 'common/_icon.scss';
-@import 'common/_fade.scss';
-@import 'common/_spinner.scss';
-@import 'common/_notification.scss';
-
-/* GENERAL */
-
-html,
-body {
-  height: 100%;
-}
+/* General */
 
 body {
-  background: #FFF;
-  color: tint($base, 20%);
-  font-family: $font;
-  font-size: $size;
-  line-height: 140%;
-}
-
-a {
-  cursor: pointer;
-  color: shade($blue, 10%);
-  text-decoration: none;
-  &:hover {
-    text-decoration: underline;
-  }
-}
-
-h1,
-h2,
-h3,
-h4 {
-  font-weight: normal;
-  margin: 0 0 $gutter;
-}
-
-h1 {
-  font-size: $gigantic;
-  line-height: 140%;
-}
-
-h2 {
-  font-size: $huge;
-  line-height: 140%;
-}
-
-h3 {
-  font-size: $large;
-  line-height: 140%;
-}
-
-p {
-  margin: 0 0 $gutter;
-}
-
-ul {
-  margin: 0 0 $gutter/2 $gutter;
-  padding: 0;
-  li {
-    padding: 0 0 $gutter/2;
-  }
-}
-
-small {
-  font-size: $small;
-}
-
-table {
-  margin: 0 0 $gutter;
-  th,
-  td {
-    padding: $gutter/2;
-  }
-  thead {
-    border-bottom: 1px solid tint($base, 90%);
-    th {
-      font-size: $small;
-      font-weight: normal;
-      white-space: nowrap;
-    }
-  }
-  tbody {
-    tr {
-      border-bottom: 1px solid tint($base, 95%);
-    }
-  }
-}
-
-/* Buttons & Controls */
-
-.button {
-  @include button();
-  &[disabled=disabled],
-  &[disabled] {
-    @include button(tint($base, 90%), true, true);
-    color: tint($base, 40%);
-  }
-}
-
-.controls {
-  float: right;
-  a {
-    float: left;
-    &:before {
-      @include icon();
-    }
-  }
-}
-
-input.filter {
-  @include border-radius($gutter);
-}
-
-/* Messages; errors, warnings... */
-
-.notification {
-  @include notifications();
-}
-
-/* Select boxes */
-
-.select {
-  position: relative;
-  &:after {
-    @include icon();
-    content: 'd';
-    cursor: pointer;
-    opacity: 0.8;
-    margin-left: $gutter/4;
-    pointer-events: none;
-    position: absolute;
-    right: 1.5*$gutter/4;
-    top: 2px;
-  }
-  &:hover {
-    &:after {
-      opacity: 1;
-    }
-  }
-  select {
-    padding-right: 1.5*$gutter;
-  }
-}
-
-/* Dropdown menus */
-
-.dropdown {
-  @include dropdown();
-  a:hover {
-    text-decoration: none;
-  }
-  .options {
-    background: #FFF;
-    @include border-radius($radius);
-    @include box-shadow(rgba(0, 0, 0, 0.1) 0 1px 0 2px);
-    a {
-      color: inherit;
-      display: block;
-      margin: $gutter/4 0;
-      padding: $gutter/4 1.5*$gutter/2;
-      white-space: nowrap;
-      &:hover {
-        background: $blue;
-        color: #FFF;
-      }
-    }
-    .separated{
-      margin-top: $gutter/2;
-      position: relative;
-      &:after {
-        content: ' ';
-        display: block;
-        border-top: 1px solid tint($base, 80%);
-        left: 0;
-        position: absolute;
-        top: -$gutter/4;
-        width: 100%;
-      }
-    }
-  }
-}
-
-/* Centered content */
-#header,
-#content,
-#footer {
   text-align: center;
-  .content {
-    margin: 0 auto;
-    padding: 0 $gutter;
-    text-align: left;
-    width: $content;
+}
+
+img.avatar {
+  border-radius: $radius;
+  height: $avatar;
+  width: $avatar;
+  vertical-align: middle;
+}
+
+#header,
+#main,
+#footer {
+  margin: 0 auto;
+  max-width: $width;
+  text-align: left;
+  width: 90%;
+}
+
+@mixin halves() {
+  @include box-sizing(border-box);
+  float: left;
+  width: 50%;
+  &:nth-child(odd) {
+    padding-right: $gutter/2;
+  }
+  &:nth-child(even) {
+    padding-left: $gutter/2;
   }
 }
 
-/* HEADER */
+/* Header */
 
-@import 'partials/_header.scss';
+#header {
+  border-bottom: 1px solid $line;
+  padding: $gutter 0;
+  .logo {
+    color: $orange;
+    &:before {
+      @include font-size($large);
+      @include icon();
+      content: '3';
+      float: left;
+      margin-right: $gutter/4;
+    }
+  }
+  .links {
+    float: right;
+    @include font-size($small);
+    a {
+      margin-left: $gutter;
+    }
+  }
+}
 
+/* Main */
 
-/* CONTENT */
+#main {
+  .section {
+    padding: 2*$gutter 0;
+    h2 {
+      margin-bottom: 2*$gutter;
+      text-align: center;
+    }
+    &.hero,
+    &.signup {
+      .button {
+        @include button($green);
+        padding: $gutter/2 1.5*$gutter;
+        &:before {
+          @include icon();
+          content: 'h';
+          @include font-size($normal);
+          margin-right: $gutter/2;
+        }
+      }
+    }
+    &.hero {
+      text-align: center;
+      h1 {
+        margin: $gutter/2;
+      }
+      h2 {
+        color: inherit;
+        @include font-size();
+      }
+      .button {
+        margin-bottom: 2*$gutter;
+      }
+    }
+    &.features {
+      border-top: 1px solid $line;
+      padding-bottom: $gutter;
+      ul {
+        @include clearfix;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        li {
+          margin: 0;
+          margin-bottom: $gutter;
+          padding: 0;
+          @include halves;
+          $size: 120px;
+          img {
+            float: left;
+            height: $size;
+            width: $size;
+          }
+          h3,
+          p {
+            margin-left: $size + $gutter/2;
+          }
+        }
+      }
+    }
+    &.signup {
+      border: 1px solid $line;
+      border-width: 1px 0;
+      text-align: center;
+    }
+    &.more {
+      @include clearfix;
+      > section {
+        @include halves;
+      }
+    }
+  }
 
-@import 'partials/_content.scss';
+  .sidebar + .content {
+    @include box-sizing(border-box);
+    margin-right: $sidebar;
+    padding-right: $gutter;
+  }
+  .sidebar {
+    float: right;
+    width: $sidebar;
+    .card {
+      padding: $gutter/2 $gutter;
+    }
+  }
+}
 
-/* FOOTER */
+/* Footer */
 
-@import 'partials/_footer.scss';
-
-/* MODAL */
-
-@import 'partials/_modal.scss';
+#footer {
+  border-top: 1px solid $line;
+  @include font-size($smaller);
+  padding-top: 2*$gutter;
+  .links,
+  .credit {
+    @include box-sizing(border-box);
+    float: left;
+    width: 50%;
+  }
+  .links {
+    .company,
+    .contact,
+    .products {
+      float: left;
+      width: 33%;
+      > a,
+      > span {
+        display: block;
+      }
+    }
+  }
+  .copyright {
+    color: $grey;
+    @include font-size($small);
+  }
+}

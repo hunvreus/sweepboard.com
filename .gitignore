@@ -1,8 +1,7 @@
 .*
 !.gitignore
-!.bowerrc
 !.gitmodules
 *~
-_site/
+
 node_modules/
-vendor/
+bower_components/

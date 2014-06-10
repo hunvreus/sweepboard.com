@@ -1,13 +1,59 @@
 {
-    "name": "Wiredcraft",
-    "version": "0.0.1",
-    "main": "Gruntfile.js",
-    "dependencies" : {},
-    "devDependencies" : {
-        "bower": "*",
-        "grunt-notify" : "*",
-        "grunt-contrib-watch" : "*",
-        "grunt-contrib-compass" : "*",
-        "grunt-contrib-concat" : "*"
-    }
+  "name": "devo.ps",
+  "version": "0.0.1",
+  "description": "devo.ps",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/devo-ps/devo-ps.github.io.git"
+  },
+  "keywords": [
+    "devo.ps",
+    "devops",
+    "devo-ps",
+    "documentation"
+  ],
+  "author": "Vincent Viallet",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/devo-ps/devo-ps.github.io/issues"
+  },
+  "homepage": "http://devo.ps",
+  "dependencies": {
+    "gulp": "*",
+    "gulp-util": "*",
+    "metalsmith-drafts": "*",
+    "metalsmith-markdown": "*",
+    "metalsmith-templates": "*",
+    "swig": "*",
+    "metalsmith": "*",
+    "metalsmith-ignore": "*",
+    "metalsmith-static": "*",
+    "metalsmith-assets": "*",
+    "metalsmith-excerpts": "*",
+    "metalsmith-more": "*",
+    "metalsmith-include": "*",
+    "metalsmith-metadata": "*",
+    "metalsmith-collections": "*",
+    "metalsmith-paginate": "*",
+    "metalsmith-permalinks": "*",
+    "metalsmith-build-date": "*",
+    "open": "*",
+    "ncp": "*",
+    "connect": "*",
+    "bower": "*",
+    "gulp-minify-css": "*",
+    "gulp-concat": "*",
+    "gulp-clean": "*",
+    "gulp-sass": "*",
+    "node-bourbon": "*",
+    "mkdirp": "*",
+    "consolidate": "git+https://github.com/kuno/consolidate.js.git"
+  },
+  "devDependencies": {
+    "eggshell": "*"
+  }
 }

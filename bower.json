@@ -1,8 +1,9 @@
 {
-  "name": "Wiredcraft",
-  "version": "0.0.1",
-  "devDependencies": {
-  	"jquery": "*",
-    "normalize-css": "*"
-  }
+    "name": "octokan",
+    "version": "0.1.1",
+    "devDependencies": {
+        "jquery": "*",
+        "normalize-css": "*",
+        "highlightjs": "*"
+    }
 }
