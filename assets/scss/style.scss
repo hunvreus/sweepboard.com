@@ -5,7 +5,7 @@
 /* Variables */
 
 $avatar: 22px;
-$sidebar: 33%;
+$sidebar: 20%;
 $blog: 700px;
 $width: 900px;
 
@@ -49,13 +49,20 @@ img.avatar {
   border-bottom: 1px solid $line;
   padding: $gutter 0;
   .logo {
-    color: $orange;
+    color: inherit;
     &:before {
       @include font-size($large);
       @include icon();
+      color: tint($orange, 5%);
       content: '3';
       float: left;
       margin-right: $gutter/4;
+    }
+    &:hover {
+      color: $black;
+      &:before {
+        color: $orange;
+      }
     }
   }
   .links {
@@ -63,6 +70,10 @@ img.avatar {
     @include font-size($small);
     a {
       margin-left: $gutter;
+    }
+    .button {
+      @include font-size($pico);
+      padding: 1px $gutter/2;
     }
   }
 }
@@ -140,7 +151,9 @@ img.avatar {
       }
     }
   }
-
+  .content {
+    padding: $gutter 0;
+  }
   .sidebar + .content {
     @include box-sizing(border-box);
     margin-right: $sidebar;
@@ -148,7 +161,26 @@ img.avatar {
   }
   .sidebar {
     float: right;
+    padding: $gutter 0;
     width: $sidebar;
+    .links {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      li {
+        border-top: 1px solid $line;
+        padding: $gutter/2 0;
+        &:first-child {
+          border-top: 0;
+        }
+        &.active {
+          a,
+          a:hover {
+            color: inherit;
+          }
+        }
+      }
+    }
     .card {
       padding: $gutter/2 $gutter;
     }
@@ -166,6 +198,16 @@ img.avatar {
     @include box-sizing(border-box);
     float: left;
     width: 50%;
+  }
+  .credit {
+    $size: 40px;
+    img {
+      float: left;
+      width: $size;
+    }
+    p {
+      margin-left: $size + $gutter/2;
+    }
   }
   .links {
     .company,

@@ -1135,7 +1135,7 @@ img.avatar {
   border-bottom: 1px solid #dde0e2;
   padding: 20px 0; }
   #header .logo {
-    color: #FF8859; }
+    color: inherit; }
     #header .logo:before {
       font-size: 24px;
       font-size: 2.4rem;
@@ -1145,15 +1145,24 @@ img.avatar {
       speak: none;
       text-transform: none;
       -webkit-font-smoothing: antialiased;
+      color: #ff8d61;
       content: '3';
       float: left;
       margin-right: 5px; }
+    #header .logo:hover {
+      color: #203442; }
+      #header .logo:hover:before {
+        color: #FF8859; }
   #header .links {
     float: right;
     font-size: 12px;
     font-size: 1.2rem; }
     #header .links a {
       margin-left: 20px; }
+    #header .links .button {
+      font-size: 10px;
+      font-size: 1rem;
+      padding: 1px 10px; }
 
 /* Main */
 #main .section {
@@ -1255,15 +1264,29 @@ img.avatar {
       padding-right: 10px; }
     #main .section.more > section:nth-child(even) {
       padding-left: 10px; }
+#main .content {
+  padding: 20px 0; }
 #main .sidebar + .content {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  margin-right: 33%;
+  margin-right: 20%;
   padding-right: 20px; }
 #main .sidebar {
   float: right;
-  width: 33%; }
+  padding: 20px 0;
+  width: 20%; }
+  #main .sidebar .links {
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+    #main .sidebar .links li {
+      border-top: 1px solid #dde0e2;
+      padding: 10px 0; }
+      #main .sidebar .links li:first-child {
+        border-top: 0; }
+      #main .sidebar .links li.active a, #main .sidebar .links li.active a:hover {
+        color: inherit; }
   #main .sidebar .card {
     padding: 10px 20px; }
 
@@ -1279,6 +1302,11 @@ img.avatar {
     box-sizing: border-box;
     float: left;
     width: 50%; }
+  #footer .credit img {
+    float: left;
+    width: 40px; }
+  #footer .credit p {
+    margin-left: 50px; }
   #footer .links .company, #footer .links .contact, #footer .links .products {
     float: left;
     width: 33%; }

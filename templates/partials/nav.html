@@ -1,4 +1,5 @@
 <ul class='links'>
-  <li><a href='/about'>About</a></li>
-  <li><a href='/blog'>Blog</a></li>
+  <li{% if path == 'faq' %} class='active'{% endif %}><a href='/faq'>FAQ</a></li>
+  <li{% if path == 'privacy' %} class='active'{% endif %}><a href='/privacy'>Privacy policy</a></li>
+  <li{% if path == 'tos' %} class='active'{% endif %}><a href='/tos'>Terms of service</a></li>
 </ul>
