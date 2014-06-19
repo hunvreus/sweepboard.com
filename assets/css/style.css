@@ -1207,6 +1207,7 @@ img.avatar {
       font-size: 1.6rem;
       margin-right: 10px; }
   #main .section.hero {
+    padding-bottom: 0;
     text-align: center; }
     #main .section.hero h1 {
       margin: 10px; }
@@ -1216,6 +1217,19 @@ img.avatar {
       font-size: 1.6rem; }
     #main .section.hero .button {
       margin-bottom: 40px; }
+    #main .section.hero .preview {
+      margin: 0 auto;
+      max-width: 720px;
+      width: 90%; }
+      #main .section.hero .preview img {
+        display: block;
+        width: 100%; }
+        #main .section.hero .preview img.demo {
+          border: 1px solid #e3e6e7;
+          border-width: 0 1px;
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          box-sizing: border-box; }
   #main .section.features {
     border-top: 1px solid #dde0e2;
     padding-bottom: 20px; }

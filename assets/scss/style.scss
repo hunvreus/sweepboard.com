@@ -101,6 +101,7 @@ img.avatar {
       }
     }
     &.hero {
+      padding-bottom: 0;
       text-align: center;
       h1 {
         margin: $gutter/2;
@@ -111,6 +112,20 @@ img.avatar {
       }
       .button {
         margin-bottom: 2*$gutter;
+      }
+      .preview {
+        margin: 0 auto;
+        max-width: 720px;
+        width: 90%;
+        img {
+          display: block;
+          width: 100%;
+          &.demo {
+            border: 1px solid tint($line, 20%);
+            border-width: 0 1px;
+            @include box-sizing(border-box);
+          }
+        }
       }
     }
     &.features {
