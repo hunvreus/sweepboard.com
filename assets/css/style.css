@@ -383,7 +383,8 @@ input:not([type=submit]), textarea, .select select {
       border-color: #fafafb; }
 
 .select {
-  cursor: pointer; }
+  cursor: pointer;
+  display: inline-block; }
   .select > select {
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -524,6 +525,10 @@ ul {
   padding: 0; }
   ul li {
     padding: 0 0 10px; }
+  ul ul {
+    margin-bottom: 0; }
+    ul ul li {
+      padding: 10px 0 0; }
 
 small {
   font-size: 12px;
@@ -728,7 +733,6 @@ pre code, pre .code {
   white-space: pre-wrap; }
 
 .dropdown {
-  cursor: pointer;
   display: inline-block;
   position: relative; }
   .dropdown .options {
@@ -747,16 +751,18 @@ pre code, pre .code {
     display: block; }
   .dropdown .options:hover {
     display: block; }
-  .dropdown a {
+  .dropdown > *:first-child {
+    cursor: pointer; }
+  .dropdown > a, .dropdown .options > a {
     color: inherit; }
-  .dropdown a:hover {
-    text-decoration: none; }
+    .dropdown > a:hover, .dropdown .options > a:hover {
+      text-decoration: none; }
   .dropdown .options {
     background: #FFF;
-    border: 1px solid #e8eaec;
+    border: 1px solid #dde0e2;
     border-radius: 2px;
     box-shadow: rgba(0, 0, 0, 0.03) 0 1px 0 0; }
-    .dropdown .options a {
+    .dropdown .options > .item, .dropdown .options > a {
       display: block;
       margin: 4px 0;
       padding: 4px 10px;
@@ -767,7 +773,7 @@ pre code, pre .code {
       -webkit-transition-duration: 0.2s;
       -moz-transition-duration: 0.2s;
       transition-duration: 0.2s; }
-      .dropdown .options a:hover {
+      .dropdown .options > .item:hover, .dropdown .options > a:hover {
         background: #fafafb; }
     .dropdown .options .separated {
       margin-top: 10px;
@@ -775,7 +781,7 @@ pre code, pre .code {
       .dropdown .options .separated:after {
         content: ' ';
         display: block;
-        border-top: 1px solid #e8eaec;
+        border-top: 1px solid #dde0e2;
         left: 0;
         position: absolute;
         top: -5px;
@@ -797,7 +803,7 @@ pre code, pre .code {
   margin-left: 5px; }
 
 .field .description {
-  color: #6e7b84;
+  color: #a5adb3;
   display: block;
   font-size: 12px;
   font-size: 1.2rem;
@@ -1041,8 +1047,6 @@ label, .label {
   z-index: 3000; }
   #modal > .header {
     border-bottom: 1px solid #dde0e2;
-    font-size: 24px;
-    font-size: 2.4rem;
     padding: 15px 20px; }
     #modal > .header h2 {
       font-size: inherit;
@@ -1050,6 +1054,8 @@ label, .label {
     #modal > .header .close {
       color: #dde0e2;
       float: right;
+      font-size: 24px;
+      font-size: 2.4rem;
       line-height: 1;
       -webkit-transition-property: color;
       -moz-transition-property: color;
@@ -1242,7 +1248,8 @@ img.avatar {
           padding-left: 10px; }
         #main .section.features ul li img {
           float: left;
-          height: 120px;
+          margin-top: 20px;
+          max-height: 120px;
           width: 120px; }
         #main .section.features ul li h3, #main .section.features ul li p {
           margin-left: 130px; }

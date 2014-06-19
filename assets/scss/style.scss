@@ -129,7 +129,8 @@ img.avatar {
           $size: 120px;
           img {
             float: left;
-            height: $size;
+            margin-top: 20px;
+            max-height: $size;
             width: $size;
           }
           h3,
