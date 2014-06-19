@@ -61,6 +61,11 @@ gulp.task('fonts', function() {
         .pipe(gulp.dest('./public/assets/fonts'));
 })
 
+gulp.task('images', function() {
+    gulp.src(site.assets.custom.images)
+        .pipe(gulp.dest('./public/assets/images'));
+})
+
 //
 gulp.task('metalsmith', function(callback) {
     var metalsmith = new Metalsmith(process.cwd());
@@ -127,5 +132,5 @@ gulp.task('watch', function() {
 });
 
 // The default task (called when you run `gulp` from cli)
-gulp.task('default', ['sass', 'concat-js', 'concat-css', 'favicons', 'fonts', 'metalsmith']);
-gulp.task('development', ['sass', 'concat-js', 'concat-css', 'favicons', 'fonts', 'metalsmith', 'server']);
+gulp.task('default', ['sass', 'concat-js', 'concat-css', 'favicons', 'fonts', 'images', 'metalsmith']);
+gulp.task('development', ['sass', 'concat-js', 'concat-css', 'favicons', 'fonts', 'images', 'metalsmith', 'server']);
