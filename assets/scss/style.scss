@@ -36,10 +36,10 @@ img.avatar {
   float: left;
   width: 50%;
   &:nth-child(odd) {
-    padding-right: $gutter/2;
+    padding-right: $gutter;
   }
   &:nth-child(even) {
-    padding-left: $gutter/2;
+    padding-left: $gutter;
   }
 }
 
@@ -126,15 +126,15 @@ img.avatar {
           margin-bottom: $gutter;
           padding: 0;
           @include halves;
+          text-align: center;
           $size: 120px;
           img {
-            float: left;
-            height: $size;
-            width: $size;
+            margin: 0 auto $gutter;
+            max-width: 140px;
+            width: 80%;
           }
-          h3,
           p {
-            margin-left: $size + $gutter/2;
+            text-align: left;
           }
         }
       }
@@ -149,6 +149,47 @@ img.avatar {
       > section {
         @include halves;
       }
+      .testimonies {
+        ul {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          li {
+            $avatar: 1.5*$gutter;
+            img.avatar {
+              float: left;
+              height: $avatar;
+              width: $avatar;
+            }
+            .testimony {
+              border: 1px solid $line;
+              border-radius: $radius;
+              display: block;
+              margin-left: $avatar + $gutter/2;
+              padding: $gutter/2 1.5*$gutter/2;
+              position: relative;
+              &:after {
+                @include arrow(left, #FFF, (1.5*$gutter/4 - 1));
+              }
+              &:before {
+                @include arrow(left, shade($line, 5%), 1.5*$gutter/4);
+              }
+              &:after,
+              &:before {
+                top: $avatar/2;
+              }
+            }
+            small,
+            blockquote {
+              margin: 0;
+              padding: 0;
+            }
+            blockquote {
+              margin-bottom: $gutter/2;
+            }
+          }
+        }
+      }
     }
   }
   .content {
@@ -156,11 +197,12 @@ img.avatar {
   }
   .sidebar + .content {
     @include box-sizing(border-box);
-    margin-right: $sidebar;
-    padding-right: $gutter;
+    @include clearfix;
+    margin-left: $sidebar;
+    padding-left: $gutter;
   }
   .sidebar {
-    float: right;
+    float: left;
     padding: $gutter 0;
     width: $sidebar;
     .links {
@@ -192,7 +234,7 @@ img.avatar {
 #footer {
   border-top: 1px solid $line;
   @include font-size($smaller);
-  padding-top: 2*$gutter;
+  padding: 2*$gutter 0;
   .links,
   .credit {
     @include box-sizing(border-box);

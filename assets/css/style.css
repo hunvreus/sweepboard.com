@@ -1235,17 +1235,18 @@ img.avatar {
         -moz-box-sizing: border-box;
         box-sizing: border-box;
         float: left;
-        width: 50%; }
+        width: 50%;
+        text-align: center; }
         #main .section.features ul li:nth-child(odd) {
-          padding-right: 10px; }
+          padding-right: 20px; }
         #main .section.features ul li:nth-child(even) {
-          padding-left: 10px; }
+          padding-left: 20px; }
         #main .section.features ul li img {
-          float: left;
-          height: 120px;
-          width: 120px; }
-        #main .section.features ul li h3, #main .section.features ul li p {
-          margin-left: 130px; }
+          margin: 0 auto 20px;
+          max-width: 140px;
+          width: 80%; }
+        #main .section.features ul li p {
+          text-align: left; }
   #main .section.signup {
     border: 1px solid #dde0e2;
     border-width: 1px 0;
@@ -1261,19 +1262,73 @@ img.avatar {
     float: left;
     width: 50%; }
     #main .section.more > section:nth-child(odd) {
-      padding-right: 10px; }
+      padding-right: 20px; }
     #main .section.more > section:nth-child(even) {
-      padding-left: 10px; }
+      padding-left: 20px; }
+  #main .section.more .testimonies ul {
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+    #main .section.more .testimonies ul li img.avatar {
+      float: left;
+      height: 30px;
+      width: 30px; }
+    #main .section.more .testimonies ul li .testimony {
+      border: 1px solid #dde0e2;
+      border-radius: 2px;
+      display: block;
+      margin-left: 40px;
+      padding: 10px 15px;
+      position: relative; }
+      #main .section.more .testimonies ul li .testimony:after {
+        content: '';
+        position: absolute;
+        border-bottom: 6.5px solid transparent;
+        border-left-color: #FFF;
+        border-right: 6.5px solid #FFF;
+        border-top: 6.5px solid transparent;
+        left: -6.5px;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+        transform: translateY(-50%); }
+      #main .section.more .testimonies ul li .testimony:before {
+        content: '';
+        position: absolute;
+        border-bottom: 7.5px solid transparent;
+        border-left-color: #d1d4d6;
+        border-right: 7.5px solid #d1d4d6;
+        border-top: 7.5px solid transparent;
+        left: -7.5px;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+        transform: translateY(-50%); }
+      #main .section.more .testimonies ul li .testimony:after, #main .section.more .testimonies ul li .testimony:before {
+        top: 15px; }
+    #main .section.more .testimonies ul li small, #main .section.more .testimonies ul li blockquote {
+      margin: 0;
+      padding: 0; }
+    #main .section.more .testimonies ul li blockquote {
+      margin-bottom: 10px; }
 #main .content {
   padding: 20px 0; }
 #main .sidebar + .content {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  margin-right: 20%;
-  padding-right: 20px; }
+  margin-left: 20%;
+  padding-left: 20px; }
+  #main .sidebar + .content:after {
+    content: "";
+    display: table;
+    clear: both; }
 #main .sidebar {
-  float: right;
+  float: left;
   padding: 20px 0;
   width: 20%; }
   #main .sidebar .links {
@@ -1295,7 +1350,7 @@ img.avatar {
   border-top: 1px solid #dde0e2;
   font-size: 14px;
   font-size: 1.4rem;
-  padding-top: 40px; }
+  padding: 40px 0; }
   #footer .links, #footer .credit {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
