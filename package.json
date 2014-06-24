@@ -43,7 +43,7 @@
     "metalsmith-build-date": "*",
     "open": "*",
     "ncp": "*",
-    "connect": "*",
+    "connect": "2.*",
     "bower": "*",
     "gulp-minify-css": "*",
     "gulp-concat": "*",
