@@ -3,10 +3,10 @@
     "destination": "./_site",
     "metadata": {
         "site": {
-            "title": "Octokan",
-            "name": "Octokan",
+            "title": "SweepBoard",
+            "name": "SweepBoard",
             "description": "A Better GitHub Issue Queue",
-            "url": "http://octokan.com",
+            "url": "http://sweepboard.com",
             "author": "Wiredcraft",
             "email": "info@wiredcraft.com",
             "ga": "UA-48007565-1",

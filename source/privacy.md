@@ -12,7 +12,7 @@ Your privacy is critically important to us. At [Wiredcraft](http://wiredcraft.co
 
 If you have questions about deleting or correcting your personal data please contact our support team.
 
-Wiredcraft Co. Ltd (“Wiredcraft”) operates several websites including [Octokan.com](http://octokan.com) and [Octochat.com](http://octochat.com). It is Wiredcraft’s policy to respect your privacy regarding any information we may collect while operating our websites.
+Wiredcraft Co. Ltd (“Wiredcraft”) operates several websites including [SweepBoard.com](http://sweepboard.com) and [Octochat.com](http://octochat.com). It is Wiredcraft’s policy to respect your privacy regarding any information we may collect while operating our websites.
 
 1. **Website Visitors**
 

@@ -1,5 +1,5 @@
 {
-    "name": "octokan",
+    "name": "sweepboard",
     "version": "0.1.1",
     "devDependencies": {
         "jquery": "*",

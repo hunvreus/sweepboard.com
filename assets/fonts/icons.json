@@ -1,6 +1,6 @@
 {
 	"metadata": {
-		"name": "Octokan",
+		"name": "SweepBoard",
 		"lastOpened": 1402040661103,
 		"created": 1381083457739
 	},
@@ -19,7 +19,7 @@
 			],
 			"id": 3,
 			"metadata": {
-				"name": "Octokan 48"
+				"name": "SweepBoard 48"
 			},
 			"height": 1024,
 			"prevSize": 48,
@@ -51,7 +51,7 @@
 			],
 			"id": 2,
 			"metadata": {
-				"name": "Octokan 32",
+				"name": "SweepBoard 32",
 				"url": "http://devo.ps"
 			},
 			"height": 1024,
@@ -309,7 +309,7 @@
 			],
 			"id": 1,
 			"metadata": {
-				"name": "Octokan 24",
+				"name": "SweepBoard 24",
 				"url": ""
 			},
 			"height": 1024,
@@ -839,7 +839,7 @@
 			],
 			"id": 0,
 			"metadata": {
-				"name": "Octokan 16",
+				"name": "SweepBoard 16",
 				"url": "",
 				"designer": "",
 				"license": ""

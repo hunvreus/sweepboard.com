@@ -2,9 +2,9 @@
 title: Frequently asked questions
 ---
 
-**How does Octokan work?**
+**How does SweepBoard work?**
 
-Octokan is an online real-time collaborative Kanban that integrates the power of GitHub. Using Octokan, all of your repositories (that have an issue queue) are now also Kanban boards.
+SweepBoard is an online real-time collaborative Kanban that integrates the power of GitHub. Using SweepBoard, all of your repositories (that have an issue queue) are now also Kanban boards.
 
 **Why do you need so much permissions from my GitHub account?**
 
@@ -12,7 +12,7 @@ We are only asking for an access to your repository to populate the tickets list
 
 **How do I collaborate with other contributors?**
 
-Octokan is a real-time web app, if you want to collaborate with others on it, just send them the URL for the board you're viewing and once they have authenticated they are on that board and you will see each others changes! Providing they have permissions to view that repository on GitHub.
+SweepBoard is a real-time web app, if you want to collaborate with others on it, just send them the URL for the board you're viewing and once they have authenticated they are on that board and you will see each others changes! Providing they have permissions to view that repository on GitHub.
 
 **How much does it cost?**
 
