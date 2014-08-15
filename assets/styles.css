@@ -1249,34 +1249,30 @@ img.avatar {
   #main .section.features {
     border-top: 1px solid #dde0e2;
     padding-bottom: 20px; }
-    #main .section.features ul {
-      list-style: none;
+    #main .section.features .group > div {
       margin: 0;
-      padding: 0; }
-      #main .section.features ul:after {
-        content: "";
-        display: table;
-        clear: both; }
-      #main .section.features ul li {
-        margin: 0;
-        margin-bottom: 20px;
-        padding: 0;
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-        float: left;
-        width: 50%;
-        text-align: center; }
-        #main .section.features ul li:nth-child(odd) {
-          padding-right: 20px; }
-        #main .section.features ul li:nth-child(even) {
-          padding-left: 20px; }
-        #main .section.features ul li img {
-          margin: 0 auto 20px;
-          max-width: 140px;
-          width: 80%; }
-        #main .section.features ul li p {
-          text-align: left; }
+      min-height: 230px;
+      margin-bottom: 20px;
+      padding: 0;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      float: left;
+      width: 50%;
+      text-align: center;
+      float: left; }
+    #main .section.features .group:before,
+    #main .section.features .group:after {
+      content: '';
+      display: table; }
+    #main .section.features .group:after {
+      clear: both; }
+    #main .section.features .group > div img {
+      margin: 0 auto 20px;
+      max-width: 140px;
+      width: 80%; }
+    #main .section.features .group > div p {
+      text-align: left; }
   #main .section.signup {
     border: 1px solid #dde0e2;
     border-width: 1px 0;
