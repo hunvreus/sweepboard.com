@@ -1,285 +1,434 @@
-/* Eggshell */
-
 @import 'eggshell';
 
-/* Variables */
-
-$avatar: 22px;
-$sidebar: 20%;
-$blog: 700px;
 $width: 900px;
+$body: 720px;
 
-/* General */
+$white: #fff;
+$primary-color: #ff8859;
 
 body {
-  text-align: center;
+  @include transition-property(font-size);
+  @include transition-duration(0.2s);
 }
 
-img.avatar {
-  border-radius: $radius;
-  height: $avatar;
-  width: $avatar;
-  vertical-align: middle;
+@mixin uncollapse-margin {
+  @include clearfix();
+  &:before {
+    content: '';
+    display: table;
+  }
 }
 
-#header,
-#main,
-#footer {
-  margin: 0 auto;
-  max-width: $width;
-  text-align: left;
-  width: 90%;
+@mixin center-block {
+  @include margin(null auto null auto);
 }
 
-@mixin halves() {
+@mixin halves($reverse: false) {
   @include box-sizing(border-box);
-  float: left;
   width: 50%;
-  &:nth-child(odd) {
-    padding-right: $gutter;
+  @if $reverse == true {
+    &:nth-child(odd) {
+      float: right;
+      padding-left: $gutter;
+    }
+    &:nth-child(even) {
+      float: left;
+      padding-right: $gutter;
+    }
   }
-  &:nth-child(even) {
-    padding-left: $gutter;
+  @else {
+    &:nth-child(odd) {
+      float: left;
+      padding-right: $gutter;
+    }
+    &:nth-child(even) {
+      float: right;
+      padding-left: $gutter;
+    }
   }
 }
 
-/* Header */
+.group {
+  @include clearfix();
+}
 
-#header {
-  border-bottom: 1px solid $line;
+.wrapper {
+  width: 90%;
+  max-width: $width;
+  @include margin(null auto null auto);
+  @include uncollapse-margin();
+  position: relative;
+}
+
+.header {
   padding: $gutter 0;
-  .logo {
-    color: inherit;
+  background-color: $primary-color;
+  a {
+    color: $white;
+    &:hover {
+      color: tint($orange, 80%);
+    }
+  }
+  .brand {
+    float: left;
     &:before {
+      float: left;
       @include font-size($large);
       @include icon();
-      color: tint($orange, 5%);
-      content: '3';
-      float: left;
+      content: '2';
       margin-right: $gutter/4;
     }
-    &:hover {
-      color: $black;
-      &:before {
-        color: $orange;
-      }
-    }
   }
-  .links {
+  .menu {
     float: right;
     @include font-size($small);
     a {
-      margin-left: $gutter;
-    }
-    .button {
-      @include font-size($pico);
-      padding: 1px $gutter/2;
+      margin-left: 20px;
+      &.signin {
+        font-weight: bold;
+      }
     }
   }
 }
 
-/* Main */
-
-#main {
-  .section {
-    padding: 2*$gutter 0;
-    h2 {
-      margin-bottom: 2*$gutter;
-      text-align: center;
-    }
-    &.hero,
-    &.signup {
-      .button {
-        @include button($green);
-        padding: $gutter/2 1.5*$gutter;
-        &:before {
-          @include icon();
-          content: 'h';
-          @include font-size($normal);
+.demo-browser {
+  display: none;
+  @media screen and (min-width: 768px) {
+    display: block;
+    width: 700px;
+    margin-bottom: 0;
+    @include center-block();
+    .demo-browser-header {
+      .demo-browser-titlebar {
+        height: 22px;
+        background-color: #626267;
+        border-radius: 5px 5px 0 0;
+        position: relative;
+        .demo-browser-buttons {
+          @include position(absolute, $gutter/4 null null $gutter/4);
+          @include clearfix();
+          .demo-browser-button {
+            float: left;
+            display: block;
+            margin-right: $gutter/4;
+            @include size(9px 9px);
+            border-radius: 100%;
+            &.close { background-color: #ff5f5f; }
+            &.minimum { background-color: #ffc65e; }
+            &.maximum { background-color: #50cd84; }
+          }
+        }
+        .demo-browser-tabs {
+          @include position(absolute, $gutter/4 null null $gutter*3);
+          .demo-browser-tab {
+            float: left;
+            display: block;
+            @include size(80px 15px);
+            background-color: #b9b7b4;
+            border: 1px solid #b9b7b4;
+            border-radius: 3px 3px 0 0;
+            @include transform(perspective(4px) rotateX(2deg));
+            &.active {
+              background-color: #f2f2f2;
+              border-color: #f2f2f2;
+              position: relative;
+              z-index: 9;
+            }
+          }
+        }
+      }
+      .demo-browser-toolbar {
+        @include size(100% 34px);
+        padding: 7px;
+        background-color: #f2f2f2;
+        @include box-sizing(border-box);
+        @include clearfix();
+        .demo-browser-tools {
+          float: left;
           margin-right: $gutter/2;
+          .demo-browser-tool {
+            float: left;
+            display: block;
+            color: #c8c8c8;
+            @include font-size($larger);
+            @include transform(rotate(90deg));
+            @include size(20px 20px);
+            &:before {
+              /* move to `right -2px` because of rotate. */
+              @include position(relative, null -1px null null);
+            }
+            &.demo-browser-backward {
+              &:before {
+                @include icon();
+                content: "/";
+              }
+            }
+            &.demo-browser-forward {
+              &:before {
+                @include icon();
+                content: "'";
+              }
+            }
+            &.demo-browser-refresh {
+              &:before {
+                @include icon();
+                content: "/";
+              }
+            }
+          }
+        }
+        .demo-browser-addressbar {
+          float: left;
+          @include size(595px 20px);
+          background-color: #fff;
+          border-radius: $radius;
+        }
+        .demo-browser-settingbar {
+          float: right;
+          .settingbar {
+            display: block;
+            @include size(15px 20px);
+            padding-top: 3px;
+            .thin-block {
+              display: block;
+              @include size(100% 3px);
+              margin-bottom: 2px;
+              border-radius: $radius/2;
+              background-color: #c8c8c8;
+            }
+          }
         }
       }
     }
-    &.hero {
-      padding-bottom: 0;
-      text-align: center;
-      h1 {
-        margin: $gutter/2;
+    .demo-browser-body {
+      height: 380px;
+      background-color: #f9f9f9;
+      .demo-browser-page {
+        @include font-size($pico);
+        height: 380px;
+        position: relative;
+        .demo-browser-page-header {
+          height: 20px;
+          background-color: #fff;
+          border-bottom: 1px solid #e9e9e9;
+        }
+        .demo-browser-page-body {
+        }
       }
-      h2 {
-        color: inherit;
-        @include font-size();
+    }
+  }
+}
+
+.hero {
+  padding-top: $gutter*2;
+  background-color: $primary-color;
+  * {
+    color: #fff;
+  }
+  hgroup {
+    text-align: center;
+    h1 {
+      @include font-size($gigantic);
+      line-height: 100%;
+      margin-bottom: $gutter/2;
+    }
+    h2 {
+      line-height: 120%;
+      margin-bottom: 0;
+    }
+  }
+  .actions {
+    text-align: center;
+    @include margin($gutter*3 null $gutter*3 null);
+    .button {
+      display: block;
+      color: $orange;
+      padding: (1.5*$gutter)/4 2*$gutter;
+      margin-bottom: $gutter/4;
+      background-color: $white;
+      border: 2px solid $white;
+      @media screen and (min-width: 768px) {
+        display: inline-block;
       }
-      .button {
-        margin-bottom: 2*$gutter;
+      &:hover, &:focus {
+        border-color: tint($orange, 80%);
+        background-color: tint($orange, 80%);
+      }
+      strong { color: $orange; }
+    }
+    .arrow-down {
+      position: relative;
+      &:before {
+        color: $orange;
+        font-style: normal;
+        @include icon();
+        content: '\2f';
+        @include position(absolute, -10% null null null);
+      }
+    }
+  }
+}
+
+.main {
+  .features {
+    @include uncollapse-margin();
+    text-align: center;
+    @media screen and (min-width: 768px) {
+      text-align: left;
+    }
+    .title {
+      @include margin($gutter*2 null $gutter*2 null);
+      @media screen and (min-width: 768px) {
+        text-align: center;
+      }
+    }
+    .feature {
+      @include clearfix();
+      @include margin($gutter*2 null $gutter*2 null);
+      &:last-child {
+        margin-bottom: 0;
+        .preview { margin-bottom: 0; }
       }
       .preview {
-        margin: 0 auto;
-        max-width: 720px;
-        width: 90%;
-        img {
-          display: block;
-          width: 100%;
-          &.demo {
-            border: 1px solid tint($line, 20%);
-            border-width: 0 1px;
-            @include box-sizing(border-box);
-          }
+        margin-bottom: $gutter;
+        @media screen and (min-width: 768px) {
+          float: left;
+          width: 40%;
+          padding-right: $gutter;
+          @include box-sizing(border-box);
         }
       }
-    }
-    &.features {
-      border-top: 1px solid $line;
-      padding-bottom: $gutter;
-      ul {
-        @include clearfix;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        li {
-          margin: 0;
-          margin-bottom: $gutter;
-          padding: 0;
-          @include halves;
-          text-align: center;
-          $size: 120px;
-          img {
-            margin: 0 auto $gutter;
-            max-width: 140px;
-            width: 80%;
-          }
-          p {
-            text-align: left;
-          }
+      .pitch {
+        @media screen and (min-width: 768px) {
+          float: left;
+          width: 60%;
+          padding-left: $gutter;
+          @include box-sizing(border-box);
+        }
+        h3 {
+          @include font-size($large);
+          margin-bottom: $gutter/2;
+        }
+        p {
+          color: $grey;
         }
       }
-    }
-    &.signup {
-      border: 1px solid $line;
-      border-width: 1px 0;
-      text-align: center;
-    }
-    &.more {
-      @include clearfix;
-      > section {
-        @include halves;
-      }
-      .testimonies {
-        ul {
-          list-style: none;
-          margin: 0;
-          padding: 0;
-          li {
-            $avatar: 1.5*$gutter;
-            img.avatar {
-              float: left;
-              height: $avatar;
-              width: $avatar;
-            }
-            .testimony {
-              border: 1px solid $line;
-              border-radius: $radius;
-              display: block;
-              margin-left: $avatar + $gutter/2;
-              padding: $gutter/2 1.5*$gutter/2;
-              position: relative;
-              &:after {
-                @include arrow(left, #FFF, (1.5*$gutter/4 - 1));
-              }
-              &:before {
-                @include arrow(left, shade($line, 5%), 1.5*$gutter/4);
-              }
-              &:after,
-              &:before {
-                top: $avatar/2;
-              }
-            }
-            small,
-            blockquote {
-              margin: 0;
-              padding: 0;
-            }
-            blockquote {
-              margin-bottom: $gutter/2;
-            }
+      @media screen and (min-width: 768px) {
+        .preview { text-align: center; }
+        &:nth-child(odd) {
+          .preview, .pitch {
+            @include halves();
+          }
+        }
+        &:nth-child(even) {
+          .preview, .pitch {
+            @include halves(true);
           }
         }
       }
     }
   }
-  .content {
-    padding: $gutter 0;
-  }
-  .sidebar + .content {
-    @include box-sizing(border-box);
-    @include clearfix;
-    margin-left: $sidebar;
-    padding-left: $gutter;
-  }
-  .sidebar {
-    float: left;
-    padding: $gutter 0;
-    width: $sidebar;
-    .links {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      li {
-        border-top: 1px solid $line;
-        padding: $gutter/2 0;
-        &:first-child {
-          border-top: 0;
-        }
-        &.active {
-          a,
-          a:hover {
-            color: inherit;
-          }
-        }
-      }
+
+  .signup {
+    text-align: center;
+    @include margin($gutter*2 null $gutter*2 null);
+    @media screen and (min-width: 768px) {
+      @include margin($gutter*5 null $gutter*5 null);
     }
+    .button {
+      padding: $gutter/2 $gutter $gutter/2 $gutter;
+    }
+  }
+
+  .more {
     .card {
-      padding: $gutter/2 $gutter;
+      @include uncollapse-margin();
+      @media screen and (min-width: 768px) {
+        float: left;
+        width: 50%;
+        margin-bottom: $gutter;
+        @include box-sizing(border-box);
+        &:first-child {
+          padding-right: $gutter;
+        }
+        &:last-child {
+          padding-left: $gutter;
+        }
+      }
+      h2 {
+        text-align: center;
+      }
+      .quotes {
+        list-style: none;
+        li {
+          @include clearfix();
+          .avatar {
+            float: left;
+            @include size(35px 35px);
+            border-radius: $radius;
+            @include margin(null $gutter/2 $gutter/4 null);
+            @include position($gutter/5 null null null);
+          }
+          .testimony {
+            p {
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
     }
   }
 }
 
-/* Footer */
-
-#footer {
-  border-top: 1px solid $line;
+.footer {
   @include font-size($smaller);
-  padding: 2*$gutter 0;
-  .links,
-  .credit {
-    @include box-sizing(border-box);
-    float: left;
-    width: 50%;
+  @include padding($gutter*2 null $gutter*2 null);
+  @media screen and(min-width: 768px) {
+    @include padding($gutter*5 null $gutter*5 null);
   }
-  .credit {
-    $size: 40px;
-    img {
+  .site-footer-nav {
+    @include clearfix();
+    @media screen and (min-width: 768px) {
       float: left;
-      width: $size;
+      width: 65%;
     }
-    p {
-      margin-left: $size + $gutter/2;
+    .nav {
+      margin-top: $gutter*2;
+      @media screen and (min-width: 768px) {
+        float: left;
+        width: percentage(1/3);
+        @include margin(0 null 0 null);
+      }
+      .leader {
+        margin-bottom: $gutter/2;
+      }
+      .site-links {
+        margin-left: 0;
+      }
     }
   }
-  .links {
-    .company,
-    .contact,
-    .products {
-      float: left;
-      width: 33%;
-      > a,
-      > span {
-        display: block;
+  .honor {
+    margin-top: $gutter*2;
+    @media screen and (min-width: 768px) {
+      float: right;
+      width: 35%;
+      margin-top: 0;
+    }
+    h3 {
+      margin-bottom: $gutter/2;
+    }
+    .summary {
+      @include clearfix();
+      img {
+        float: left;
+        width: 40px;
+        @include margin(null $gutter $gutter/2 null);
+        @include position(relative, $gutter/5 null null null);
       }
     }
   }
   .copyright {
     color: $grey;
-    @include font-size($small);
   }
 }
+
