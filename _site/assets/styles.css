@@ -1376,9 +1376,10 @@ body {
         speak: none;
         text-transform: none;
         -webkit-font-smoothing: antialiased;
-        content: '\2f';
+        content: '\e600';
         position: absolute;
-        top: -10%; }
+        top: -10%;
+        left: 5px; }
 
 .main .features {
   text-align: center; }

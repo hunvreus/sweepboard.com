@@ -251,8 +251,8 @@ body {
       &:before {
         font-style: normal;
         @include icon();
-        content: '\2f';
-        @include position(absolute, -10% null null null);
+        content: '\e600';
+        @include position(absolute, -10% null null 5px);
       }
     }
   }
