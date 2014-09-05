@@ -1363,10 +1363,12 @@ body {
         background-color: #ffe7dd; }
       .hero .actions .button strong {
         color: #FF8859; }
+      .hero .actions .button.button-focus {
+        color: #fff;
+        background-color: #FF8859; }
     .hero .actions .arrow-down {
       position: relative; }
       .hero .actions .arrow-down:before {
-        color: #FF8859;
         font-style: normal;
         font-family: 'icons';
         font-variant: normal;
@@ -1409,6 +1411,9 @@ body {
         margin-bottom: 0; }
     .main .features .feature .preview {
       margin-bottom: 20px; }
+      .main .features .feature .preview img {
+        width: 50%;
+        max-width: 160px; }
       @media screen and (min-width: 768px) {
         .main .features .feature .preview {
           float: left;

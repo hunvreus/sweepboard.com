@@ -35,8 +35,7 @@ body {
       float: left;
       padding-right: $gutter;
     }
-  }
-  @else {
+  } @else {
     &:nth-child(odd) {
       float: left;
       padding-right: $gutter;
@@ -65,9 +64,7 @@ body {
   background-color: $primary-color;
   a {
     color: $white;
-    &:hover {
-      color: tint($orange, 80%);
-    }
+    &:hover { color: tint($orange, 80%); }
   }
   .brand {
     float: left;
@@ -84,9 +81,7 @@ body {
     @include font-size($small);
     a {
       margin-left: 20px;
-      &.signin {
-        font-weight: bold;
-      }
+      &.signin { font-weight: bold; }
     }
   }
 }
@@ -157,23 +152,17 @@ body {
               /* move to `right -2px` because of rotate. */
               @include position(relative, null -1px null null);
             }
-            &.demo-browser-backward {
-              &:before {
-                @include icon();
-                content: "/";
-              }
+            &.demo-browser-backward:before {
+              @include icon();
+              content: "/";
             }
-            &.demo-browser-forward {
-              &:before {
-                @include icon();
-                content: "'";
-              }
+            &.demo-browser-forward:before {
+              @include icon();
+              content: "'";
             }
-            &.demo-browser-refresh {
-              &:before {
-                @include icon();
-                content: "/";
-              }
+            &.demo-browser-refresh:before {
+              @include icon();
+              content: "/";
             }
           }
         }
@@ -212,8 +201,7 @@ body {
           background-color: #fff;
           border-bottom: 1px solid #e9e9e9;
         }
-        .demo-browser-page-body {
-        }
+        .demo-browser-page-body { }
       }
     }
   }
@@ -222,9 +210,7 @@ body {
 .hero {
   padding-top: $gutter*2;
   background-color: $primary-color;
-  * {
-    color: #fff;
-  }
+  * { color: #fff; }
   hgroup {
     text-align: center;
     h1 {
@@ -255,11 +241,14 @@ body {
         background-color: tint($orange, 80%);
       }
       strong { color: $orange; }
+      &.button-focus {
+        color: $white;
+        background-color: $orange;
+      }
     }
     .arrow-down {
       position: relative;
       &:before {
-        color: $orange;
         font-style: normal;
         @include icon();
         content: '\2f';
@@ -273,14 +262,10 @@ body {
   .features {
     @include uncollapse-margin();
     text-align: center;
-    @media screen and (min-width: 768px) {
-      text-align: left;
-    }
+    @media screen and (min-width: 768px) { text-align: left; }
     .title {
       @include margin($gutter*2 null $gutter*2 null);
-      @media screen and (min-width: 768px) {
-        text-align: center;
-      }
+      @media screen and (min-width: 768px) { text-align: center; }
     }
     .feature {
       @include clearfix();
@@ -291,6 +276,7 @@ body {
       }
       .preview {
         margin-bottom: $gutter;
+        img { width: 50%; max-width: 160px; }
         @media screen and (min-width: 768px) {
           float: left;
           width: 40%;
@@ -309,21 +295,15 @@ body {
           @include font-size($large);
           margin-bottom: $gutter/2;
         }
-        p {
-          color: $grey;
-        }
+        p { color: $grey; }
       }
       @media screen and (min-width: 768px) {
         .preview { text-align: center; }
         &:nth-child(odd) {
-          .preview, .pitch {
-            @include halves();
-          }
+          .preview, .pitch { @include halves(); }
         }
         &:nth-child(even) {
-          .preview, .pitch {
-            @include halves(true);
-          }
+          .preview, .pitch { @include halves(true); }
         }
       }
     }
@@ -332,12 +312,8 @@ body {
   .signup {
     text-align: center;
     @include margin($gutter*2 null $gutter*2 null);
-    @media screen and (min-width: 768px) {
-      @include margin($gutter*5 null $gutter*5 null);
-    }
-    .button {
-      padding: $gutter/2 $gutter $gutter/2 $gutter;
-    }
+    @media screen and (min-width: 768px) { @include margin($gutter*5 null $gutter*5 null); }
+    .button { padding: $gutter/2 $gutter $gutter/2 $gutter; }
   }
 
   .more {
@@ -348,16 +324,10 @@ body {
         width: 50%;
         margin-bottom: $gutter;
         @include box-sizing(border-box);
-        &:first-child {
-          padding-right: $gutter;
-        }
-        &:last-child {
-          padding-left: $gutter;
-        }
+        &:first-child { padding-right: $gutter; }
+        &:last-child { padding-left: $gutter; }
       }
-      h2 {
-        text-align: center;
-      }
+      h2 { text-align: center; }
       .quotes {
         list-style: none;
         li {
@@ -370,9 +340,7 @@ body {
             @include position($gutter/5 null null null);
           }
           .testimony {
-            p {
-              margin-bottom: 0;
-            }
+            p { margin-bottom: 0; }
           }
         }
       }
@@ -383,9 +351,7 @@ body {
 .footer {
   @include font-size($smaller);
   @include padding($gutter*2 null $gutter*2 null);
-  @media screen and(min-width: 768px) {
-    @include padding($gutter*5 null $gutter*5 null);
-  }
+  @media screen and(min-width: 768px) { @include padding($gutter*5 null $gutter*5 null); }
   .site-footer-nav {
     @include clearfix();
     @media screen and (min-width: 768px) {
@@ -399,12 +365,8 @@ body {
         width: percentage(1/3);
         @include margin(0 null 0 null);
       }
-      .leader {
-        margin-bottom: $gutter/2;
-      }
-      .site-links {
-        margin-left: 0;
-      }
+      .leader { margin-bottom: $gutter/2; }
+      .site-links { margin-left: 0; }
     }
   }
   .honor {
@@ -414,9 +376,7 @@ body {
       width: 35%;
       margin-top: 0;
     }
-    h3 {
-      margin-bottom: $gutter/2;
-    }
+    h3 { margin-bottom: $gutter/2; }
     .summary {
       @include clearfix();
       img {
@@ -427,8 +387,6 @@ body {
       }
     }
   }
-  .copyright {
-    color: $grey;
-  }
+  .copyright { color: $grey; }
 }
 
