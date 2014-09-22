@@ -1,0 +1,65 @@
+{
+    "source": "./source",
+    "destination": "./_site",
+    "metadata": {
+        "site": {
+            "title": "SweepBoard",
+            "name": "SweepBoard",
+            "description": "A Better GitHub Issue Queue",
+            "url": "http://sweepboard.com",
+            "author": "Wiredcraft",
+            "email": "info@wiredcraft.com",
+            "ga": "UA-48007565-1",
+            "gauges": "52fb27825dd0531cc6001f16"
+        }
+    },
+    "metalsmith": {
+        "metalsmith-markdown": {
+            "xhtml": true
+        },
+        "metalsmith-excerpts": true,
+        "metalsmith-drafts": {},
+        "metalsmith-build-date": true,
+        "metalsmith-more": true,
+        "metalsmith-permalinks": {},
+        "metalsmith-templates": {
+            "engine": "swig",
+            "cache": false,
+            "default": "page.html",
+            "directory": "./templates"
+        },
+        "metalsmith-assets": null,
+        "metalsmith-static": null
+    },
+    "assets": {
+        "vendor": {
+            "js": [
+                "bower_components/jquery/dist/jquery.js",
+                "bower_components/scrollReveal.js/dist/scrollReveal.js"
+            ],
+            "css": [
+                "bower_components/normalize-css/normalize.css"
+            ]
+        },
+        "custom": {
+            "js": [
+                "assets/js/*.js"
+            ],
+            "css": [
+                "assets/css/*.css"
+            ],
+            "scss": [
+                "assets/scss/**/*.{scss,sass}"
+            ],
+            "fonts": [
+                "assets/fonts/*"
+            ],
+            "favicons": [
+                "assets/favicons/*"
+            ],
+            "images": [
+                "assets/images/**"
+            ]
+        }
+    }
+}

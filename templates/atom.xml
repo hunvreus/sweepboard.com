@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<feed xmlns='http://www.w3.org/2005/Atom'>
+ <title>{{ site.title }}</title>
+ <link href='{{ url }}/atom.xml' rel='self'/>
+ <link href='{{ url }}/'/>
+ <updated>{{ date | date('c') }}</updated>
+ <id>{{ site.url }}/</id>
+ <author>
+   <name>{{ site.author }}</name>
+   <email>{{ site.email }}</email>
+ </author>
+ {% for post in blog %}
+ {% if loop.key < 10 %}
+   <entry>
+     <title>{{ post.title }}</title>
+     <link href='{{ url }}/{{ post.path }}'/>
+     <updated>{{ post.date | date('c') }}</updated>
+     <id>{{ site.url }}/{{ post.path }}</id>
+     <content type='html'>{{ post.less | safe }}</content>
+   </entry>
+ {% endif %}
+ {% endfor %}
+</feed>

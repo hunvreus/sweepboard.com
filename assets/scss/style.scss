@@ -1,0 +1,428 @@
+@import 'eggshell';
+
+$width: 900px;
+$body: 720px;
+
+$white: #fff;
+$primary-color: #ff8859;
+
+body {
+  @include transition-property(font-size);
+  @include transition-duration(0.2s);
+}
+
+@mixin uncollapse-margin {
+  @include clearfix();
+  &:before {
+    content: '';
+    display: table;
+  }
+}
+
+@mixin center-block {
+  @include margin(null auto null auto);
+}
+
+@mixin halves($reverse: false) {
+  @include box-sizing(border-box);
+  width: 50%;
+  @if $reverse == true {
+    &:nth-child(odd) {
+      float: right;
+      padding-left: $gutter;
+    }
+    &:nth-child(even) {
+      float: left;
+      padding-right: $gutter;
+    }
+  } @else {
+    &:nth-child(odd) {
+      float: left;
+      padding-right: $gutter;
+    }
+    &:nth-child(even) {
+      float: right;
+      padding-left: $gutter;
+    }
+  }
+}
+
+.group {
+  @include clearfix();
+}
+
+.wrapper {
+  width: 90%;
+  max-width: $width;
+  @include margin(null auto null auto);
+  @include uncollapse-margin();
+  position: relative;
+}
+
+.header {
+  padding: $gutter 0;
+  background-color: $primary-color;
+  a {
+    color: $white;
+    &:hover { color: tint($orange, 80%); }
+  }
+  .brand {
+    float: left;
+    &:before {
+      float: left;
+      @include font-size($large);
+      @include icon();
+      content: '2';
+      margin-right: $gutter/4;
+    }
+  }
+  .menu {
+    float: right;
+    @include font-size($small);
+    a {
+      margin-left: 20px;
+      &.signin { font-weight: bold; }
+    }
+  }
+}
+
+.demo-browser {
+  display: none;
+  @media screen and (min-width: 768px) {
+    display: block;
+    width: 700px;
+    margin-bottom: 0;
+    @include center-block();
+    .demo-browser-header {
+      .demo-browser-titlebar {
+        height: 22px;
+        background-color: #626267;
+        border-radius: 5px 5px 0 0;
+        position: relative;
+        .demo-browser-buttons {
+          @include position(absolute, $gutter/4 null null $gutter/4);
+          @include clearfix();
+          .demo-browser-button {
+            float: left;
+            display: block;
+            margin-right: $gutter/4;
+            @include size(9px 9px);
+            border-radius: 100%;
+            &.close { background-color: #ff5f5f; }
+            &.minimum { background-color: #ffc65e; }
+            &.maximum { background-color: #50cd84; }
+          }
+        }
+        .demo-browser-tabs {
+          @include position(absolute, $gutter/4 null null $gutter*3);
+          .demo-browser-tab {
+            float: left;
+            display: block;
+            @include size(80px 15px);
+            background-color: #b9b7b4;
+            border: 1px solid #b9b7b4;
+            border-radius: 3px 3px 0 0;
+            @include transform(perspective(4px) rotateX(2deg));
+            &.active {
+              background-color: #f2f2f2;
+              border-color: #f2f2f2;
+              position: relative;
+              z-index: 9;
+            }
+          }
+        }
+      }
+      .demo-browser-toolbar {
+        @include size(100% 34px);
+        padding: 7px;
+        background-color: #f2f2f2;
+        @include box-sizing(border-box);
+        @include clearfix();
+        .demo-browser-tools {
+          float: left;
+          margin-right: $gutter/2;
+          .demo-browser-tool {
+            float: left;
+            display: block;
+            color: #c8c8c8;
+            @include font-size($larger);
+            @include transform(rotate(90deg));
+            @include size(20px 20px);
+            &:before {
+              /* move to `right -2px` because of rotate. */
+              @include position(relative, null -1px null null);
+            }
+            &.demo-browser-backward:before {
+              @include icon();
+              content: "/";
+            }
+            &.demo-browser-forward:before {
+              @include icon();
+              content: "'";
+            }
+            &.demo-browser-refresh:before {
+              @include icon();
+              content: "/";
+            }
+          }
+        }
+        .demo-browser-addressbar {
+          float: left;
+          @include size(595px 20px);
+          background-color: #fff;
+          border-radius: $radius;
+        }
+        .demo-browser-settingbar {
+          float: right;
+          .settingbar {
+            display: block;
+            @include size(15px 20px);
+            padding-top: 3px;
+            .thin-block {
+              display: block;
+              @include size(100% 3px);
+              margin-bottom: 2px;
+              border-radius: $radius/2;
+              background-color: #c8c8c8;
+            }
+          }
+        }
+      }
+    }
+    .demo-browser-body {
+      height: 380px;
+      background-color: #f9f9f9;
+      .demo-browser-page {
+        img {
+          width: 700px;
+          height: 380px;
+        }
+        @include font-size($pico);
+        height: 380px;
+        position: relative;
+        .demo-browser-page-header {
+          height: 20px;
+          background-color: #fff;
+          border-bottom: 1px solid #e9e9e9;
+        }
+        .demo-browser-page-body { }
+      }
+    }
+  }
+}
+
+.hero {
+  background-color: $primary-color;
+  position: relative;
+  & > .wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include transform(translate(-50%, -50%));
+  }
+  * { color: #fff; }
+  hgroup {
+    padding-top: 40px;
+    text-align: center;
+    h1 {
+      @include font-size($gigantic);
+      line-height: 100%;
+      margin-bottom: $gutter;
+    }
+    h2 {
+      line-height: 120%;
+      margin-bottom: 0;
+    }
+  }
+  .actions {
+    text-align: center;
+    @include margin($gutter*3 null $gutter*3 null);
+    .button {
+      display: block;
+      color: $orange;
+      padding: (1.5*$gutter)/4 2*$gutter;
+      margin-bottom: $gutter/4;
+      background-color: $white;
+      border: 2px solid $white;
+      @media screen and (min-width: 768px) {
+        display: inline-block;
+      }
+      &:hover, &:focus {
+        border-color: tint($orange, 80%);
+        background-color: tint($orange, 80%);
+      }
+      strong { color: $orange; }
+      &.button-focus {
+        color: $white;
+        background-color: $orange;
+      }
+    }
+    .arrow-down {
+      position: relative;
+      &:before {
+        font-style: normal;
+        @include icon();
+        content: '\e600';
+        @include position(absolute, -10% null null 5px);
+      }
+    }
+  }
+}
+
+.main {
+  // front page
+  .features {
+    @include uncollapse-margin();
+    text-align: center;
+    @media screen and (min-width: 768px) { text-align: left; }
+    .title {
+      @include margin($gutter*2 null $gutter*2 null);
+      @media screen and (min-width: 768px) { text-align: center; }
+    }
+    .feature {
+      @include clearfix();
+      @include margin($gutter*4 null $gutter*4 null);
+      &:last-child {
+        margin-bottom: 0;
+        .preview { margin-bottom: 0; }
+      }
+      .preview {
+        margin-bottom: $gutter;
+        img { width: 50%; max-width: 160px; }
+        @media screen and (min-width: 768px) {
+          float: left;
+          width: 40%;
+          padding-right: $gutter;
+          @include box-sizing(border-box);
+        }
+      }
+      .pitch {
+        @media screen and (min-width: 768px) {
+          float: left;
+          width: 60%;
+          padding-left: $gutter;
+          @include box-sizing(border-box);
+        }
+        h3 {
+          @include font-size($large);
+          margin-bottom: $gutter/2;
+        }
+        p { color: $grey; }
+      }
+      @media screen and (min-width: 768px) {
+        .preview { text-align: center; }
+        &:nth-child(odd) {
+          .preview, .pitch { @include halves(); }
+        }
+        &:nth-child(even) {
+          .preview, .pitch { @include halves(true); }
+        }
+      }
+    }
+  }
+
+  // pages
+  .content {
+    width: 90%;
+    max-width: 900px;
+    margin: $gutter auto;
+    h1 {
+      padding-top: $gutter;
+      padding-bottom: $gutter;
+    }
+    h3 {
+      padding-top: $gutter;
+      padding-bottom: $gutter/2;
+    }
+  }
+
+  .signup {
+    text-align: center;
+    @include margin($gutter*2 null $gutter*2 null);
+    @media screen and (min-width: 768px) { @include margin($gutter*5 null $gutter*5 null); }
+    .button { padding: $gutter/2 $gutter $gutter/2 $gutter; }
+  }
+}
+
+.more-wrapper {
+  padding-top: $gutter*2;
+  background: #eef1f2;
+  .more {
+    width: 90%;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    .card {
+      @include uncollapse-margin();
+      @media screen and (min-width: 768px) {
+        float: left;
+        width: 50%;
+        margin-bottom: $gutter;
+        @include box-sizing(border-box);
+        &:first-child { padding-right: $gutter; }
+        &:last-child { padding-left: $gutter; }
+      }
+      h2 { text-align: center; }
+      .quotes {
+        list-style: none;
+        li {
+          @include clearfix();
+          .avatar {
+            float: left;
+            @include size(35px 35px);
+            border-radius: $radius;
+            @include margin(null $gutter/2 $gutter/4 null);
+            @include position($gutter/5 null null null);
+          }
+          .testimony {
+            p { margin-bottom: 0; }
+          }
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  @include font-size($smaller);
+  @include padding($gutter*2 null $gutter*2 null);
+  @media screen and(min-width: 768px) { @include padding($gutter*5 null $gutter*5 null); }
+  .site-footer-nav {
+    @include clearfix();
+    @media screen and (min-width: 768px) {
+      float: left;
+      width: 65%;
+    }
+    .nav {
+      margin-top: $gutter*2;
+      @media screen and (min-width: 768px) {
+        float: left;
+        width: percentage(1/3);
+        @include margin(0 null 0 null);
+      }
+      .leader { margin-bottom: $gutter/2; }
+      .site-links { margin-left: 0; }
+    }
+  }
+  .honor {
+    margin-top: $gutter*2;
+    @media screen and (min-width: 768px) {
+      float: right;
+      width: 35%;
+      margin-top: 0;
+    }
+    h3 { margin-bottom: $gutter/2; }
+    .summary {
+      @include clearfix();
+      img {
+        float: left;
+        width: 40px;
+        @include margin(null $gutter $gutter/2 null);
+        @include position(relative, $gutter/5 null null null);
+      }
+    }
+  }
+  .copyright { color: $grey; }
+}
+
