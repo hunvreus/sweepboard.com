@@ -34,7 +34,8 @@
     "assets": {
         "vendor": {
             "js": [
-                "bower_components/jquery/dist/jquery.js"
+                "bower_components/jquery/dist/jquery.js",
+                "bower_components/scrollReveal.js/dist/scrollReveal.js"
             ],
             "css": [
                 "bower_components/normalize-css/normalize.css"

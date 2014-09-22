@@ -4,10 +4,6 @@
 {% if section == 'front' %}
   {{ contents | safe }}
 {% else %}
-  <aside class='sidebar'>
-	  {% include "partials/nav.html" %}
-	</aside>
-
 	<section class='content'>
 		<h1>{{ title }}</h1>
 		{{ contents | safe }}

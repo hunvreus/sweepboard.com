@@ -1,9 +1,12 @@
 {
-    "name": "sweepboard",
-    "version": "0.1.1",
-    "devDependencies": {
-        "jquery": "*",
-        "normalize-css": "*",
-        "highlightjs": "*"
-    }
+  "name": "sweepboard",
+  "version": "0.1.1",
+  "devDependencies": {
+    "jquery": "*",
+    "normalize-css": "*",
+    "highlightjs": "*"
+  },
+  "dependencies": {
+    "scrollReveal.js": "~0.1.3"
+  }
 }

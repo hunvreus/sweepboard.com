@@ -193,6 +193,10 @@ body {
       height: 380px;
       background-color: #f9f9f9;
       .demo-browser-page {
+        img {
+          width: 700px;
+          height: 380px;
+        }
         @include font-size($pico);
         height: 380px;
         position: relative;
@@ -266,6 +270,7 @@ body {
 }
 
 .main {
+  // front page
   .features {
     @include uncollapse-margin();
     text-align: center;
@@ -316,6 +321,21 @@ body {
     }
   }
 
+  // pages
+  .content {
+    width: 90%;
+    max-width: 900px;
+    margin: $gutter auto;
+    h1 {
+      padding-top: $gutter;
+      padding-bottom: $gutter;
+    }
+    h3 {
+      padding-top: $gutter;
+      padding-bottom: $gutter/2;
+    }
+  }
+
   .signup {
     text-align: center;
     @include margin($gutter*2 null $gutter*2 null);
@@ -329,7 +349,7 @@ body {
   background: #eef1f2;
   .more {
     width: 90%;
-    max-width: 90%;
+    max-width: 900px;
     margin-left: auto;
     margin-right: auto;
     position: relative;
