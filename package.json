@@ -44,7 +44,6 @@
     "open": "*",
     "ncp": "*",
     "connect": "2.*",
-    "bower": "*",
     "gulp-minify-css": "*",
     "gulp-concat": "*",
     "gulp-clean": "*",

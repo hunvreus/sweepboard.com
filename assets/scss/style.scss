@@ -208,15 +208,15 @@ body {
 }
 
 .hero {
-  padding-top: $gutter*2;
   background-color: $primary-color;
   * { color: #fff; }
   hgroup {
+    padding-top: 40px;
     text-align: center;
     h1 {
       @include font-size($gigantic);
       line-height: 100%;
-      margin-bottom: $gutter/2;
+      margin-bottom: $gutter;
     }
     h2 {
       line-height: 120%;
@@ -269,7 +269,7 @@ body {
     }
     .feature {
       @include clearfix();
-      @include margin($gutter*2 null $gutter*2 null);
+      @include margin($gutter*4 null $gutter*4 null);
       &:last-child {
         margin-bottom: 0;
         .preview { margin-bottom: 0; }

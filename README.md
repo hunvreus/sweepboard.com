@@ -1,8 +1,6 @@
-This is the public facing website for [devo.ps](http://devo.ps), a simple way to manage complex infrastructure with Git.
+This is the public facing website for [sweepboard.com](http://sweepboard.com).
 
 ## Install
 
 1. `npm install`
-1. `bower install`
-1. `npm install`
-1. `npm install`
+2. `bower install`

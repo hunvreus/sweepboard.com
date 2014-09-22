@@ -30,15 +30,14 @@
         },
         "metalsmith-assets": null,
         "metalsmith-static": null
-    },             
+    },
     "assets": {
         "vendor": {
             "js": [
-                "vendor/jquery/dist/jquery.js",
-                "vendor/highlightjs/highlight.pack.js"
+                "bower_components/jquery/dist/jquery.js"
             ],
             "css": [
-                "vendor/normalize-css/normalize.css"
+                "bower_components/normalize-css/normalize.css"
             ]
         },
         "custom": {
