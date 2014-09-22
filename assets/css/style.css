@@ -1330,7 +1330,17 @@ body {
             border-bottom: 1px solid #e9e9e9; } }
 
 .hero {
-  background-color: #ff8859; }
+  background-color: #ff8859;
+  position: relative; }
+  .hero > .wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); }
   .hero * {
     color: #fff; }
   .hero hgroup {
@@ -1472,44 +1482,54 @@ body {
       margin-bottom: 100px; } }
   .main .signup .button {
     padding: 10px 20px 10px 20px; }
-.main .more .card:after {
-  content: "";
-  display: table;
-  clear: both; }
-.main .more .card:before {
-  content: '';
-  display: table; }
-@media screen and (min-width: 768px) {
-  .main .more .card {
-    float: left;
-    width: 50%;
-    margin-bottom: 20px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box; }
-    .main .more .card:first-child {
-      padding-right: 20px; }
-    .main .more .card:last-child {
-      padding-left: 20px; } }
-.main .more .card h2 {
-  text-align: center; }
-.main .more .card .quotes {
-  list-style: none; }
-  .main .more .card .quotes li:after {
-    content: "";
-    display: table;
-    clear: both; }
-  .main .more .card .quotes li .avatar {
-    float: left;
-    width: 35px;
-    height: 35px;
-    border-radius: 2px;
-    margin-right: 10px;
-    margin-bottom: 5px;
-    position: relative;
-    top: 4px; }
-  .main .more .card .quotes li .testimony p {
-    margin-bottom: 0; }
+
+.more-wrapper {
+  padding-top: 40px;
+  background: #eef1f2; }
+  .more-wrapper .more {
+    width: 90%;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative; }
+    .more-wrapper .more .card:after {
+      content: "";
+      display: table;
+      clear: both; }
+    .more-wrapper .more .card:before {
+      content: '';
+      display: table; }
+    @media screen and (min-width: 768px) {
+      .more-wrapper .more .card {
+        float: left;
+        width: 50%;
+        margin-bottom: 20px;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box; }
+        .more-wrapper .more .card:first-child {
+          padding-right: 20px; }
+        .more-wrapper .more .card:last-child {
+          padding-left: 20px; } }
+    .more-wrapper .more .card h2 {
+      text-align: center; }
+    .more-wrapper .more .card .quotes {
+      list-style: none; }
+      .more-wrapper .more .card .quotes li:after {
+        content: "";
+        display: table;
+        clear: both; }
+      .more-wrapper .more .card .quotes li .avatar {
+        float: left;
+        width: 35px;
+        height: 35px;
+        border-radius: 2px;
+        margin-right: 10px;
+        margin-bottom: 5px;
+        position: relative;
+        top: 4px; }
+      .more-wrapper .more .card .quotes li .testimony p {
+        margin-bottom: 0; }
 
 .footer {
   font-size: 14px;

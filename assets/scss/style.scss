@@ -209,6 +209,13 @@ body {
 
 .hero {
   background-color: $primary-color;
+  position: relative;
+  & > .wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include transform(translate(-50%, -50%));
+  }
   * { color: #fff; }
   hgroup {
     padding-top: 40px;
@@ -315,8 +322,17 @@ body {
     @media screen and (min-width: 768px) { @include margin($gutter*5 null $gutter*5 null); }
     .button { padding: $gutter/2 $gutter $gutter/2 $gutter; }
   }
+}
 
+.more-wrapper {
+  padding-top: $gutter*2;
+  background: #eef1f2;
   .more {
+    width: 90%;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
     .card {
       @include uncollapse-margin();
       @media screen and (min-width: 768px) {
