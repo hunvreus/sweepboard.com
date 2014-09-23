@@ -191,7 +191,6 @@ body {
     }
     .demo-browser-body {
       height: 380px;
-      overflow: hidden;
       background-color: #f9f9f9;
       .demo-browser-page {
         img {
@@ -237,7 +236,7 @@ body {
   }
   .actions {
     text-align: center;
-    @include margin($gutter*3 null $gutter*3 null);
+    @include margin($gutter*2 null $gutter*2 null);
     .button {
       display: block;
       color: $orange;

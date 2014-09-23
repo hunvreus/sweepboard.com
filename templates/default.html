@@ -51,8 +51,11 @@
       {% include "partials/footer.html" %}
     </div>
   </footer>
+  <script>
+    document.querySelector('.js-fullheight').style.height = (window.innerHeight - 62) + 'px'
+  </script>
+  <script src='/public/assets/scripts.js'></script>
   {% if site.gauges %}{% include "partials/gauges.html" %}{% endif %}
 	{% if site.ga %}{% include "partials/ga.html" %}{% endif %}
-  <script src='/public/assets/scripts.js'></script>
 </body>
 </html>

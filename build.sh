@@ -1,8 +1,11 @@
 #!/bin/bash
 
+# build
+gulp
+
 # clean
-rm atom.xml CNAME google945dae66a3fbd963.html index.html robots.txt sitemap.xml styles.css
-rm -r 404/ faq/ privacy/ tos/
+rm atom.xml CNAME index.html robots.txt sitemap.xml
+rm -r 404/ public/ faq/ privacy/ tos/
 
 # copy
 cp -r _site/* ./

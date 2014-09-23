@@ -1318,7 +1318,6 @@ body {
               background-color: #c8c8c8; }
       .demo-browser .demo-browser-body {
         height: 380px;
-        overflow: hidden;
         background-color: #f9f9f9; }
         .demo-browser .demo-browser-body .demo-browser-page {
           font-size: 10px;
@@ -1360,8 +1359,8 @@ body {
       margin-bottom: 0; }
   .hero .actions {
     text-align: center;
-    margin-top: 60px;
-    margin-bottom: 60px; }
+    margin-top: 40px;
+    margin-bottom: 40px; }
     .hero .actions .button {
       display: block;
       color: #FF8859;

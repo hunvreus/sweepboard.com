@@ -44,7 +44,7 @@
     </div>
   </header>
   <main class='main'>
-
+    
 
   <div class='hero js-fullheight' name='hero'>
   <div class='wrapper'>
@@ -57,7 +57,7 @@
         <strong>GitHub</strong></a>
       <a href='#main' class='scroll button button-focus'>How it works<i class='arrow-down'></i></a>
     </p>
-    <figure class='demo-browser' data-scroll-reveal="wait .5s">
+    <figure class='demo-browser'>
       <div class='demo-browser-header'>
         <div class='demo-browser-titlebar'>
           <div class='demo-browser-buttons'>
@@ -251,6 +251,10 @@
 
     </div>
   </footer>
+  <script>
+    document.querySelector('.js-fullheight').style.height = (window.innerHeight - 62) + 'px'
+  </script>
+  <script src='/public/assets/scripts.js'></script>
   <script type="text/javascript">
   var _gauges = _gauges || [];
   (function() {
@@ -275,6 +279,5 @@
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
 </script>
-  <script src='/public/assets/scripts.js'></script>
 </body>
 </html>
