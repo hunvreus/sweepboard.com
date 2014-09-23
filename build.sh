@@ -4,7 +4,7 @@
 gulp
 
 # clean
-rm atom.xml CNAME index.html robots.txt sitemap.xml
+rm atom.xml index.html robots.txt sitemap.xml
 rm -r 404/ public/ faq/ privacy/ tos/
 
 # copy
