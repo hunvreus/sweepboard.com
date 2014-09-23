@@ -1,0 +1,4 @@
+Sitemap: http://sweepboard.com/sitemap.xml
+
+User-agent: *
+Disallow: /images/
