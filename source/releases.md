@@ -2,7 +2,7 @@
 title: Releases
 ---
 
-### V1.0.1 - 2014.09.20
+### V1.1.0 - 2014.09.24
 
 We've just released a new version of SweepBoard and we're pretty psyched. Not only did we cleaned up a lot of our backlog of issues, but we added the multi-repositories support. We have some more coming, but let me walk you through what we've just pushed online:
 
